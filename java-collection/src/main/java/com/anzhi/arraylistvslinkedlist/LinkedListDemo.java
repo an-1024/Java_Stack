@@ -2,7 +2,6 @@ package com.anzhi.arraylistvslinkedlist;
 
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 
 public class LinkedListDemo {
 
@@ -10,13 +9,16 @@ public class LinkedListDemo {
     private static final boolean ADD_HEAD_FLAG = false;
 
     // 从中间位置添加元素
-    private static final boolean ADD_MIDDLE_FLAG = true;
+    private static final boolean ADD_MIDDLE_FLAG = false;
+
+    // 从尾部位置添加元素
+    private static final boolean ADD_LAST_FLAG = false;
 
     // API 查看 demo 标志
-    private static final boolean API_INDEX_FLAG = false;
+    private static final boolean API_INDEX_FLAG = true;
 
     // 插入元素
-    private static final int ADD_NUM_SIZE = 10000;
+    private static final int ADD_NUM_SIZE = 5;
 
     public static void main(String[] args) {
         LinkedList<String> linkedList = new LinkedList<String>();
@@ -24,6 +26,8 @@ public class LinkedListDemo {
             for (int i = 0; i < 10; i++) {
                 linkedList.add("第" + i + "个元素");
             }
+            linkedList.remove(null);
+            linkedList.remove(2);
             for (int j = 0; j < linkedList.size(); j++) {
                 String nodeStr = linkedList.get(j);
                 if (nodeStr.equals("第6个元素")) {
@@ -41,17 +45,24 @@ public class LinkedListDemo {
                 }
             }
         } else if (ADD_HEAD_FLAG) {
-            long timeEnd = System.currentTimeMillis();
+            long timeStart = System.nanoTime();
             for (int i = 0; i < ADD_NUM_SIZE; i++) {
                 linkedList.addFirst("第" + i + "个元素");
             }
-            System.out.println("LinkedList 从头添加" + ADD_NUM_SIZE + "个元素花费时间为：" + (System.currentTimeMillis() - timeEnd));
+            System.out.println("LinkedList 从头添加" + ADD_NUM_SIZE + "个元素花费时间为：" + (System.nanoTime() - timeStart));
         } else if (ADD_MIDDLE_FLAG) {
-            long timeEnd = System.currentTimeMillis();
+            long timeStart = System.nanoTime();
             for (int i = 0; i < ADD_NUM_SIZE; i++) {
                 linkedList.add(linkedList.size()/2, "第" + i + "个元素");
             }
-            System.out.println("LinkedList 从中间添加" + ADD_NUM_SIZE + "个元素花费时间为：" + (System.currentTimeMillis() - timeEnd));
+            System.out.println("LinkedList 从中间添加" + ADD_NUM_SIZE + "个元素花费时间为：" + (System.nanoTime() - timeStart));
+        } else if (ADD_LAST_FLAG) {
+            long timeStart = System.nanoTime();
+            for (int i = 0; i < ADD_NUM_SIZE; i++) {
+                linkedList.add("第" + i + "个元素");
+            }
+            System.out.println("LinkedList 从尾部添加" + ADD_NUM_SIZE + "个元素花费时间为：" + (System.nanoTime() - timeStart));
+
         }
     }
 
