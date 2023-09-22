@@ -52,9 +52,8 @@ public class InterfaceIdCreateUtil {
 
     public static void main(String[] args) throws JsonProcessingException {
         String channelId = InterfaceIdCreateUtil.channelIdGenerate("EOMS", "10086gdhjcl-tmh");
-        String plaChannelId = InterfaceIdCreateUtil.plaInterfaceId("/push/ServiceOpenFrameGate");
-        String outChannelId = InterfaceIdCreateUtil.outInterfaceId("BjCommonOutService", "NGWFINTERFACE_LINKHANDLINGCOLLECTION_POST");
+        String plaChannelId = InterfaceIdCreateUtil.plaInterfaceId("/ivvr/replacelogQuery");
+        String outChannelId = InterfaceIdCreateUtil.outInterfaceId("BjCommonOutService", "OPF_GSM_REPLACELOG_QUERY_001");
         System.out.println("channelId = " + channelId  + "\n" + "outChannelId = " + outChannelId + "\n" + "plaChannelId = " + plaChannelId);
-        log.info("1111111");
     }
 }
