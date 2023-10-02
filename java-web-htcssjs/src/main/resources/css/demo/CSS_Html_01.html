@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        第二种修饰方式内部样式： 将 style 定义在 head 标签中
+        然后通过选择器来选中元素并为其设置样式，可以同时对多个标签进行设置
+        需要注意的是，内联样式的优先级高于内部样式，且内部样式只能对一个网页起作用
+     -->
+    <!-- <style>
+        p{
+            color: chartreuse;
+            font-size: 60px;
+        }
+     </style> -->
+
+    <!-- 
+        第三种修饰方式外部样式表：即将所有样式定义到外部的CSS中
+        然后通过 link 标签引入外部标签，同样局部优先级高
+        外部CSS除了可复用之外，还能利用浏览器的缓存，从而加快网页加载速度
+       -->
+    <link rel="stylesheet" href="../demo/common/GlobalStyle.css">
+</head>
+
+<body>
+    <!-- 
+        CSS：网页表现：
+        网页实际上是一个多层结构，对于用户来说，是俯视，因此看到的就是一个平面。通过 CSS 可以对网页不同结构进行渲染。
+     -->
+    <!-- 
+        使用 CSS 来对页面元素进行修饰
+            第一种方式（内联样式，行内样式）：在标签内部使用 style 进行修饰。
+            开发时不推荐使用。每次只能对一个标签进行操作，当有多个标签时，需要添加多个进行操纵。不利于后期维护操作
+      -->
+    <p style="color: red; font-size: 60px;">少小离家老大回</p>
+    <p id="blue">乡音无改鬓毛衰</p>
+    <p class="pink testA">儿童相见不相识</p>
+    <p class="pink">笑问客从何处来</p>
+
+    <!-- 
+        场景说明：将 p 标签定义的字体设置为红色，将 div 修饰的字体变为黄色
+     -->
+    <span class="red2">将 p 标签定义的字体设置为红色</span>
+    <div class="red2">将 div 修饰的字体变为黄色</div>
+    <p class="red2">123</p>
+
+    <!-- 
+        并集选择器：同时操作多个标签属性
+      -->
+    <span>并集选择器中的 span</span>
+    <div>并集选择器中的 div</div>
+
+    <!-- 
+        关系型选择器的应用
+       -->
+    <div>
+        我是最外层的 div
+        <p>
+            我是 div 元素的中 p
+            <br>
+            <span>我是 p 元素中的 span </span>
+        </p>
+        <span>
+            我是 div 元素中的 span
+        </span>
+        <span class="spanA">
+            我是 div 元素中的另一个 spanA
+        </span>
+        <span class="spanB">
+            我是 div 元素中的另一个 spanB
+        </span>
+    </div>
+
+    <!-- 
+        属性选择器
+     -->
+     <div>
+        <span class="abc">属性选择器A</span>
+        <span class="abcd">属性选择器B</span>
+     </div>
+</body>
+
+</html>
