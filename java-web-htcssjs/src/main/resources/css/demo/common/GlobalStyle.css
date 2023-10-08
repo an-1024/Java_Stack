@@ -186,3 +186,52 @@ ul>li:first-of-type {
 ul>li:not(:nth-child(1)){
     color: yellowgreen;
 }
+
+/* 
+a 元素的伪类：
+:link：表示没有访问过的链接
+:visited：表示访问过的链接：由于隐私的原因，visited 这个伪类只能修改链接的颜色
+:hover：表示鼠标移入状态
+:active：用来表示鼠标点击
+*/
+a:link{
+    color: red;
+    font-size: 60px;
+}
+a:visited{
+    color: black;
+}
+a:hover{
+    color: aqua;
+    font-size: 80px;
+}
+a:active{
+    color: bisque;
+}
+
+/* 
+伪元素：表示页面中一些特殊的并不真实存在的元素（一般是指定特殊的位置修饰）
+::first-letter：表示第一个字母
+::first-line：表示第一行
+::selection：表示选中的内容
+::before：表示元素的开始（比如添加个空格什么的，不可选中）
+::after：表示元素的最后
+    before 和 after 必须结合 content 属性来使用
+*/
+p::first-letter{
+    font-size: 90px;
+}
+p::first-line{
+    background: yellowgreen;
+}
+p::selection{
+    background-color: bisque;
+}
+p::before{
+    content: 'abc';
+    color: red;
+}
+p::after{
+    content: 'abc';
+    color: black;
+}
