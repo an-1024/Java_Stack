@@ -120,11 +120,11 @@ div p span {
 * 选择下边所有的兄弟
 *   兄弟元素名称 ～ 兄弟元素名称
 **/
-span + span {
+span+span {
     font-size: 70px;
 }
 
-span ~ span {
+span~span {
     font-size: 70px;
 }
 
@@ -139,6 +139,50 @@ span ~ span {
 span[class=abc] {
     color: bisque;
 }
+
 span[class*=abc] {
     color: blueviolet;
+}
+
+/**
+* 伪类选择器：
+* 此时虽然将第一列设置为了黑色，但是这是固定写死的，并不灵活
+* 此时就需要用到伪类：表示元素状态的，比如这里的第一列
+*   :first-child：第一个元素
+*   :last-child：最后一个元素
+*   :nth-child(3)：表示选中第几个元素，
+*                   n表示全部选中；
+*                   2n后者even：表示选中偶数位的元素
+*                   2n+1 或者 odd：表示选中奇数位的元素
+*   以上伪类是根据所有的子元素进行排序的
+*   
+*   :first-of-type
+*   :last-of-type
+*   :nth-of-type()
+*   这几个伪类的功能和上述的类似，不同的是他们在同类元素中进行排序
+*
+*   :not()：否定伪类：把符合条件的元素去除
+**/
+ul>li.liFirst {
+    color: black
+}
+
+ul>li:first-child {
+    color: red;
+}
+
+ul>li:last-child {
+    color: blue;
+}
+
+ul>li:nth-child(3) {
+    color: blue;
+}
+
+ul>li:first-of-type {
+    color: blue;
+}
+
+ul>li:not(:nth-child(1)){
+    color: yellowgreen;
 }
