@@ -12,6 +12,7 @@
         <module>java-collection</module>
         <module>work-utils</module>
         <module>java-web-htcssjs</module>
+        <module>software-architect</module>
     </modules>
 
     <dependencyManagement>
